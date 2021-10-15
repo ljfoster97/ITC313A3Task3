@@ -13,6 +13,11 @@ import java.text.DecimalFormat;
 import java.util.Date;
 
 /**
+ * Author: Lyndon Foster.
+ * Course: ITC313 - Programming in Java 2.
+ * Assessment Title: Assessment Item 3, Task 1 - Tax Management Database Application
+ * Date: October 16th, 2021.
+ *
  * Server program that calculates loan repayments from
  * client data and sends the results back to the client.
  */
@@ -52,6 +57,7 @@ public class LoanServer extends Application {
         // Create a new Scene and add the ScrollPane that contains the TextArea.
         Scene scene = new Scene(scrollPane, 480, 184);
 
+        // Add node and show.
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
@@ -70,6 +76,7 @@ public class LoanServer extends Application {
      * Thread for receiving data, performing calculations and sending back to the client.
      */
     private class LoanServerThread extends Thread {
+        // Socket for each thread.
         Socket socket;
         int count;
 
@@ -125,6 +132,7 @@ public class LoanServer extends Application {
                 textArea.appendText("Total payment: $"
                         + df.format(totalPayment) + "\n\n");
 
+                // Make sure to close the socket.
                 socket.close();
             } catch(IOException e) {
                 e.printStackTrace();
@@ -178,7 +186,7 @@ public class LoanServer extends Application {
                 }
             } catch(IOException e) {
                 e.printStackTrace();
-                //ALERT
+                // ALERT WINDOW SHOULD GO HERE
             }
         }
     }

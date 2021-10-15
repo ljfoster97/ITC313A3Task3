@@ -13,6 +13,11 @@ import java.net.Socket;
 import java.text.DecimalFormat;
 
 /**
+ * Author: Lyndon Foster.
+ * Course: ITC313 - Programming in Java 2.
+ * Assessment Title: Assessment Item 3, Task 1 - Tax Management Database Application
+ * Date: October 16th, 2021.
+ *
  * Client program that allows the user to enter an interest rate, loan term and loan amount.
  * The data is then transmitted to a server listening on the specified port.
  * The data received is then formatted and displayed to the user.
@@ -79,8 +84,10 @@ public class LoanClient extends Application {
 
         textArea = new TextArea();
 
+        // Auto-scroll to the bottom of the textarea when new text is appended.
         textArea.textProperty().addListener((observableValue, s, t1) -> textArea.setScrollTop(Double.MAX_VALUE));
 
+        // Set up gridpane.
         GridPane gridPane = new GridPane();
         gridPane.setAlignment(Pos.CENTER);
         gridPane.setHgap(10);
@@ -100,6 +107,7 @@ public class LoanClient extends Application {
         VBox vBox = new VBox();
         vBox.getChildren().addAll(gridPane,textArea);
 
+        // add node to scene and show stage.
         Scene scene = new Scene(vBox, 500, 310);
         stage.setScene(scene);
         stage.show();

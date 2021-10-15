@@ -1,5 +1,15 @@
 import java.util.Date;
 
+/**
+ * Author: Lyndon Foster.
+ * Course: ITC313 - Programming in Java 2.
+ * Assessment Title: Assessment Item 3, Task 1 - Tax Management Database Application
+ * Date: October 16th, 2021.
+ *
+ * Loan object with fields, getter and setter methods
+ * as well as methods to calculate the monthly and total repayments.
+ */
+
 public class Loan {
     private double interestRate;
     private int loanTerm;
@@ -12,8 +22,9 @@ public class Loan {
         this.loanAmount = loanAmount;
     }
 
+    // Data for testing default constructor.
     public Loan() {
-        this(2.5, 1, 1000);
+        this(5, 5, 100000);
     }
 
     public double getInterestRate() {
